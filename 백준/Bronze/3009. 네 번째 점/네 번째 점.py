@@ -2,28 +2,15 @@ import sys
 
 data = sys.stdin.read().splitlines()
 
-a, b = map(int, data[0].split())
-c, d = map(int, data[1].split())
-e, f = map(int, data[2].split())
+x_coords = []
+y_coords = []
 
-x = [a, c, e]
-y = [b, d, f]
+for line in data:
+    x, y = map(int, line.split())
+    x_coords.append(x)
+    y_coords.append(y)
 
-x_min = min(x)
-y_min = min(y)
-x_max = max(x)
-y_max = max(y)
+x4 = x_coords[0] ^ x_coords[1] ^ x_coords[2]
+y4 = y_coords[0] ^ y_coords[1] ^ y_coords[2]
 
-strs = ""
-
-if x.count(x_min) == 1 :
-    strs += str(x_min)
-else :
-    strs += str(x_max)
-strs += " "
-if y.count(y_min) == 1 :
-    strs += str(y_min)
-else :
-    strs += str(y_max)
-    
-print(strs)
+print(f"{x4} {y4}")
