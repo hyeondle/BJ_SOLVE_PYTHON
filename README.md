@@ -1,2 +1,2 @@
-# BJ_SOLVE_PYTHON
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+Python practice
+파이썬 연습
