@@ -1,11 +1,14 @@
 import sys
-from math import comb
 
 n = int(sys.stdin.read().strip())
-result = 0
 
-for r in range(n // 2 + 1):
-    result += comb(n - r, r)
-    result %= 10007
+dp = [0] * (n + 1)
 
-print(result)
+dp[1] = 1
+if n > 1:
+    dp[2] = 2
+
+for i in range(3, n + 1):
+    dp[i] = (dp[i - 1] + dp[i - 2]) % 10007
+
+print(dp[n])
